@@ -340,11 +340,16 @@ function toolbarModuleFilterHtml() {
 		( QUnit.urlParams.module === undefined ? "selected='selected'" : "" ) +
 		">< All Modules ></option>";
 
-	for ( i = 0; i < modulesList.length; i++ ) {
+	function onlyUnique(value, index, self) {
+		return self.indexOf(value) === index;
+	}
+	var uniqueModules = modulesList.filter(onlyUnique);
+
+	for ( i = 0; i < uniqueModules.length; i++ ) {
 		moduleFilterHtml += "<option value='" +
-			escapeText( encodeURIComponent( modulesList[ i ] ) ) + "' " +
-			( QUnit.urlParams.module === modulesList[ i ] ? "selected='selected'" : "" ) +
-			">" + escapeText( modulesList[ i ] ) + "</option>";
+			escapeText( encodeURIComponent( uniqueModules[ i ] ) ) + "' " +
+			( QUnit.urlParams.module === uniqueModules[ i ] ? "selected='selected'" : "" ) +
+			">" + escapeText( uniqueModules[ i ] ) + "</option>";
 	}
 	moduleFilterHtml += "</select>";
 
