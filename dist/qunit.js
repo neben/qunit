@@ -1,12 +1,12 @@
 /*!
- * QUnit 1.23.1-pre
+ * QUnit 1.23.1
  * https://qunitjs.com/
  *
  * Copyright jQuery Foundation and other contributors
  * Released under the MIT license
  * https://jquery.org/license
  *
- * Date: 2016-04-07T21:08Z
+ * Date: 2016-04-11T17:17Z
  */
 
 ( function( global ) {
@@ -384,7 +384,7 @@ function verifyLoggingCallbacks() {
 QUnit.isLocal = !( defined.document && window.location.protocol !== "file:" );
 
 // Expose the current QUnit version
-QUnit.version = "1.23.1-pre";
+QUnit.version = "1.23.1";
 
 extend( QUnit, {
 
